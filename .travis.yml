@@ -3,12 +3,15 @@ language: php
 matrix:
   fast_finish: true
   include:
-    - env: DB=mysql; MW=REL1_27; PHPUNIT=4.8.*
+    # Current Meza master
+    - env: DB=mysql; MW=1.27.4; SMW=2.5.3
       php: 5.6
-    - env: DB=sqlite; MW=1.25.6
-      php: 5.5
-    - env: DB=sqlite; MW=1.28.2
-      php: 7.0
+    # What current Meza master should be
+    - env: DB=mysql; MW=1.27.4; SMW=2.5.6
+      php: 5.6
+    # Meza for MW 1.30
+    - env: DB=mysql; MW=1.30.0; SMW=2.5.6
+      php: 5.6
 
 install:
   - bash ./build/travis/install-mediawiki.sh
@@ -16,13 +19,6 @@ install:
 
 script:
   - bash ./build/travis/run-tests.sh
-
-notifications:
-  irc:
-    channels:
-      - "chat.freenode.net#semantic-mediawiki"
-    on_success: never
-    on_failure: always
 
 cache:
   directories:
