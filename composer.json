@@ -1,7 +1,7 @@
 {
-	"name": "mediawiki/semantic-result-formats",
+	"name": "jamesmontalvo3/semantic-result-formats",
 	"type": "mediawiki-extension",
-	"description": "Provides additional result formats for queries using Semantic MediaWiki",
+	"description": "A test implementation of semantic result formats",
 	"keywords": [
 		"SRF",
 		"Semantic Result Formats",
@@ -47,7 +47,7 @@
 	"require": {
 		"php": ">=5.5.0",
 		"composer/installers": "1.*,>=1.0.1",
-		"mediawiki/semantic-media-wiki": "~2.1",
+		"jamesmontalvo3/semantic-media-wiki": "~2.1",
 		"nicmart/tree": "^0.2.7",
 		"data-values/geo": "~2.0",
 		"symfony/css-selector": "^3.3"
