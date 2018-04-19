@@ -23,6 +23,10 @@ function installToMediaWikiRoot {
 	echo '{ "repositories": [ { "type": "vcs", "url": "https://github.com/jamesmontalvo3/SemanticResultFormats" } ], "require": { "mediawiki/semantic-result-formats": "dev-meza-test" } }' > "$MW_INSTALL_PATH/composer.local.json"
 	# composer require mediawiki/semantic-result-formats "2.5.x-dev"
 	composer config --global github-protocols https
+
+	# This is probably a terrible idea...testing to see if it fixes the Travis CI + Composer-via-VCS issue
+	composer config --global github-oauth.github.com ec2d898123585cfe145071909c4062b629c327fd
+
 	composer update
 
 	# FIXME: Remove when "symfony/css-selector" has reached packagist
